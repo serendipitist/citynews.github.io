@@ -1,24 +1,23 @@
 
 function loadData() {
 
-    var $body = $('body');
+    var $div = $('#bgimg-div');
     var $wikiElem = $('#wikipedia-links');
     var $nytHeaderElem = $('#nytimes-header');
     var $nytElem = $('#nytimes-articles');
     var $greeting = $('#greeting');
 
 // clear out old data before new request
-    $wikiElem.text("");
     $nytElem.text("");
 
 // load streetview
 
-    var streetAddress=$('#street').val();
+    //var streetAddress=$('#street').val();
     var cityStr=$('#city').val();
     var address= cityStr;
     $greeting.text('So you want to know more information about' + " " + address + '?');
-    var streetUrl="https://maps.googleapis.com/maps/api/streetview?size=800x800&location="+ cityStr + "&heading=151.78&pitch=-0.76";
-    $body.append('<img class="bgimg" src="' + streetUrl + ' ">');
+    var streetUrl="https://maps.googleapis.com/maps/api/streetview?size=800x800&location=" + cityStr + "";
+    $div.append('<img class="bgimg" src="' + streetUrl + ' ">');
 
 //  NYT ajax request goes here!!
 //change the response-format to JSON
