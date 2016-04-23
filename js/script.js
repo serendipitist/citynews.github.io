@@ -1,7 +1,7 @@
 
 function loadData() {
 
-    var $div = $('#bgimg-div');
+    var $body = $('body');
     var $wikiElem = $('#wikipedia-links');
     var $nytHeaderElem = $('#nytimes-header');
     var $nytElem = $('#nytimes-articles');
@@ -17,7 +17,7 @@ function loadData() {
     var address= cityStr;
     $greeting.text('So you want to know more information about' + " " + address + '?');
     var streetUrl="https://maps.googleapis.com/maps/api/streetview?size=800x800&location=" + cityStr + "";
-    $div.append('<img class="bgimg" src="' + streetUrl + ' ">');
+    $body.append('<img class="bgimg" src="' + streetUrl + ' ">');
 
 //  NYT ajax request goes here!!
 //change the response-format to JSON
